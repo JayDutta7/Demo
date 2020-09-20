@@ -15,6 +15,9 @@ class StaticValue {
         const val headerKey="headerKey"
         const val Header="Header"
 
+        const val REQUEST_TIMEOUT_DURATION = 10
+        const val DEBUG = true
+
 
 
 

@@ -48,7 +48,6 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
     //util
     implementation utilDepenencies.timberLog
     implementation utilDepenencies.multiDex
@@ -70,10 +69,8 @@ dependencies {
     //Threading
     implementation rxDependencies.rxAndroid
     implementation rxDependencies.rxJava
-
     // UI
     implementation utilDepenencies.circleImageView
-
     // Networking
     implementation networkingDependencies.retrofitCore
     //implementation networkingDependencies.retrofitMoshiConverter
@@ -84,7 +81,6 @@ dependencies {
     implementation networkingDependencies.gson
     implementation networkingDependencies.retrofitGsonConverter
     implementation networkingDependencies.retroRxAdapter
-
     //ImageView
 //    implementation(networkingDependencies.picasso) {
 //        exclude group: "com.android.support"
@@ -93,14 +89,12 @@ dependencies {
     kapt utilDepenencies.glideCompile
     kapt utilDepenencies.glideAnnotation
     implementation utilDepenencies.glideOkHttp
-
     // Android KTX
     implementation androidKtx.activityKtx
     implementation androidKtx.fragmentKtx
     implementation androidKtx.runtimeKtx
     implementation androidKtx.navigationKtx
     implementation androidKtx.liveDataKtx
-
     // Test
     testImplementation testing.junit
     androidTestImplementation testing.junitAndroid
