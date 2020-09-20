@@ -8,12 +8,13 @@ import com.example.demoapplication.networking.responsePojo.login.LoginRes
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import okhttp3.MediaType
-import okhttp3.RequestBody
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.RequestBody.Companion.toRequestBody
 import timber.log.Timber
 
 class LoginRepository {
     private var loginRepoApiService: ApiInterface? = null
+
     init {
         loginRepoApiService = ApiInterface.CreateRetrofit().apiService(WebService.BaseUrl)
     }
@@ -22,22 +23,22 @@ class LoginRepository {
     fun loginApi(
         email: String,
         password: String,
-        action:String
+        action: String
     ): Single<LoginRes>? {
-        Log.e("email",email)
-        Log.e("email",password)
-        Log.e("email",action)
-        return loginRepoApiService?.fetchLogin("",
-            RequestBody.create(MediaType.parse("text/plain"),action),
-            email= RequestBody.create(MediaType.parse("text/plain"),email),
-            password = RequestBody.create(MediaType.parse("text/plain"),password))
+        Log.e("email", email)
+        Log.e("email", password)
+        Log.e("email", action)
+        return loginRepoApiService?.fetchLogin(
+            url = "",
+            action = action.toRequestBody("text/plain".toMediaTypeOrNull()),
+            email = email.toRequestBody("text/plain".toMediaTypeOrNull()),
+            password = password.toRequestBody("text/plain".toMediaTypeOrNull())
+        )
             ?.doOnError {
                 Timber.e(it)
             }?.subscribeOn(Schedulers.io())
             ?.observeOn(AndroidSchedulers.mainThread())
     }
-
-
 
 
 }

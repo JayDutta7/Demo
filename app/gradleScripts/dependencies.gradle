@@ -1,0 +1,110 @@
+ext {
+
+        androidXCore="1.3.0"
+        androidXAppcompat="1.1.0"
+        constraintLayout="1.1.3"
+        kotlinVersion="1.4.10"
+        moshiVersion="1.8.0"
+        retrofit2_version = "2.9.0"
+        okhttp3_version = "3.12.0"
+        kotlinCoroutineVersion = "1.3.5"
+        picassoVersion = "2.71828"
+        activityKtx = "1.1.0"
+        fragmentKtx = "1.2.5"
+        viewmodelKtx = "2.2.0"
+        httpLoggingInterceptor = "4.7.2"
+        nav_version = "2.3.0"
+        legacySupport = "1.0.0"
+        lifecycleExtensions = "2.0.0"
+        junitVersion = "4.12"
+        junitAndroidVersion = "1.1.1"
+        espressoVersion = "3.2.0"
+        circleImageViewVersion = "3.1.0"
+        mockkVersion = "1.10.0"
+        coroutineTest = "1.3.7"
+        androidCoreTest = "2.1.0"
+        desugaringVersion = "1.0.9"
+
+        lifecycleReactiveStream = "2.2.0"
+        rxAndroid = "2.1.1"
+        rxJava = "2.2.17"
+        gson = "2.8.5"
+        timberLog = "4.7.1"
+        glidE = "4.9.0"
+        multidex = "2.0.1"
+        dimenLib = '1.0.6'
+        dexter = '6.0.2'
+        retrofitGsonConverter = '2.4.0'
+        retroRxAdapter = '2.5.0'
+        xRecyclerView = '1.1.0'
+        materialDesign = '1.2.1'
+
+        utilDepenencies = [
+                timberLog : "com.jakewharton.timber:timber:$timberLog",
+                glidE:"com.github.bumptech.glide:glide:$glidE",
+                glideCompile:"com.github.bumptech.glide:compiler:$glidE",
+                glideAnnotation:"com.github.bumptech.glide:annotations:$glidE",
+                glideOkHttp:"com.github.bumptech.glide:okhttp3-integration:$glidE",
+                multiDex:"androidx.multidex:multidex:$multidex",
+                sdpDimen:"com.intuit.sdp:sdp-android:$dimenLib",
+                karumiDexter:"com.karumi:dexter:$dexter",
+                materialDesign:"com.google.android.material:material:$materialDesign",
+                circleImageView: "de.hdodenhof:circleimageview:$circleImageViewVersion",
+                coreDesugaring: "com.android.tools:desugar_jdk_libs:$desugaringVersion"
+        ]
+
+        rxDependencies = [
+                rxAndroid: "io.reactivex.rxjava2:rxandroid:$rxAndroid",
+                rxJava: "io.reactivex.rxjava2:rxjava:$rxJava"
+        ]
+
+
+        kotlinDependencies = [
+                kotlinStdlib: "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion",
+                //coroutinesCore: "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutineVersion",
+                //coroutinesAndroid: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinCoroutineVersion"
+        ]
+
+        androidxDependencies = [
+                core: "androidx.core:core-ktx:$androidXCore",
+                appCompat: "androidx.appcompat:appcompat:$androidXAppcompat",
+                constraintLayout: "androidx.constraintlayout:constraintlayout:$constraintLayout",
+                navigationFragment: "androidx.navigation:navigation-fragment-ktx:$nav_version",
+                recyclerView: "androidx.recyclerview:recyclerview:$androidXAppcompat",
+                legacy: "androidx.legacy:legacy-support-v4:$legacySupport",
+                lifecycleExtensions: "androidx.lifecycle:lifecycle-extensions:$lifecycleExtensions",
+                lifecycleReactiveStream: "androidx.lifecycle:lifecycle-reactivestreams:$lifecycleReactiveStream"
+        ]
+
+        networkingDependencies = [
+                retrofitCore: "com.squareup.retrofit2:retrofit:$retrofit2_version",
+                //retrofitMoshiConverter: "com.squareup.retrofit2:converter-moshi:$retrofit2_version",
+                okhttp: "com.squareup.okhttp3:okhttp:$okhttp3_version",
+                okhttpLoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:$httpLoggingInterceptor",
+               // picasso: "com.squareup.picasso:picasso:$picassoVersion",
+               // moshi: "com.squareup.moshi:moshi-kotlin:$moshiVersion",
+               // moshiAnnotation: "com.squareup.moshi:moshi-kotlin-codegen:$moshiVersion",
+                gson:"com.google.code.gson:gson:$gson",
+                retrofitGsonConverter:"com.squareup.retrofit2:converter-gson:$retrofitGsonConverter",
+                retroRxAdapter:"com.squareup.retrofit2:adapter-rxjava2:$retroRxAdapter"
+        ]
+
+        androidKtx = [
+                activityKtx: "androidx.activity:activity-ktx:$activityKtx",
+                fragmentKtx: "androidx.fragment:fragment-ktx:$fragmentKtx",
+                viewModelKtx: "androidx.lifecycle:lifecycle-viewmodel-ktx:$viewmodelKtx",
+                runtimeKtx: "androidx.lifecycle:lifecycle-runtime-ktx:$viewmodelKtx",
+                navigationKtx: "androidx.navigation:navigation-ui-ktx:$nav_version",
+                liveDataKtx: "androidx.lifecycle:lifecycle-livedata-ktx:$viewmodelKtx"
+        ]
+
+        testing = [
+                junit: "junit:junit:$junitVersion",
+                junitAndroid: "androidx.test.ext:junit:$junitAndroidVersion",
+                espresso: "androidx.test.espresso:espresso-core:$espressoVersion",
+                mockk: "io.mockk:mockk:$mockkVersion",
+                //coroutinesTest: "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutineTest",
+                androidCoreTest: "androidx.arch.core:core-testing:$androidCoreTest"
+        ]
+
+}

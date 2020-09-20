@@ -1,21 +1,15 @@
 package com.example.demoapplication.ui.activity.home
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import androidx.lifecycle.ViewModelProviders
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.demoapplication.DemoApplication.Companion.getPref
 import com.example.demoapplication.R
 import com.example.demoapplication.localDatabase.staticValue.StaticValue
 import com.example.demoapplication.ui.BaseActivity
 import com.example.demoapplication.ui.activity.home.adapter.MainAdapter
 import com.example.demoapplication.viewModel.home.HomeViewModel
-import com.example.demoapplication.viewModel.login.LoginViewModel
-import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.android.synthetic.main.activity_main.*
-import timber.log.Timber
 
 class HomeActivity : BaseActivity() {
 
@@ -25,19 +19,22 @@ class HomeActivity : BaseActivity() {
 
     private lateinit var headerMap: HashMap<String, String>
 
+    private lateinit var listMain: RecyclerView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        listMain = (findViewById(R.id.list_main))
+        headerMap = HashMap()
         /*ViewModel*/
         homeViewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
 
-        list_main.layoutManager = LinearLayoutManager(this)
+        if (this::listMain.isInitialized)
+            listMain.layoutManager = LinearLayoutManager(this)
 
-        headerMap = HashMap()
 
-        if(this::homeViewModel.isInitialized){
+        if (this::homeViewModel.isInitialized) {
 
             /*Hit Api*/
             getPref().getStringValue(StaticValue.headerKey)?.let {
@@ -47,7 +44,7 @@ class HomeActivity : BaseActivity() {
                 homeViewModel.requestResponse(
                     headerMap,
                     timeZone = "Asia/Kolkata",
-                    pageNo= 1,
+                    pageNo = 1,
                     action = "homePage"
                 )
             }
@@ -57,9 +54,9 @@ class HomeActivity : BaseActivity() {
                 mainAdapter =
                     MainAdapter(
                         context = this@HomeActivity,
-                        list= it.postList
+                        list = it.postList
                     )
-                list_main.adapter = mainAdapter
+                listMain.adapter = mainAdapter
             })
         }
 

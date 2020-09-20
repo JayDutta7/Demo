@@ -4,20 +4,35 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
+import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.appcompat.widget.AppCompatButton
+import androidx.appcompat.widget.AppCompatEditText
 import androidx.lifecycle.ViewModelProviders
 import com.example.demoapplication.R
 import com.example.demoapplication.ui.BaseActivity
 import com.example.demoapplication.ui.activity.home.HomeActivity
 import com.example.demoapplication.viewModel.login.LoginViewModel
-import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : BaseActivity() {
 
     private lateinit var loginViewModel: LoginViewModel
 
+    private lateinit var loginButton:AppCompatButton
+    private lateinit var skipLogin:AppCompatButton
+    private lateinit var userNameOrMobile:AppCompatEditText
+    private lateinit var userPassword:AppCompatEditText
+    private lateinit var myProgressbar:ProgressBar
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        loginButton = findViewById(R.id.loginButton)
+        skipLogin = findViewById(R.id.skipLogin)
+        userNameOrMobile = findViewById(R.id.userNameOrMobile)
+        userPassword = findViewById(R.id.userPassword)
+        myProgressbar = findViewById(R.id.my_progressBar)
 
         loginButton.setOnClickListener {
             when {
@@ -35,7 +50,7 @@ class LoginActivity : BaseActivity() {
                         password = userPassword.text.toString(),
                         action = "login"
                     )
-                    my_progressBar.visibility = View.VISIBLE
+                    myProgressbar.visibility = View.VISIBLE
                 }
             }
         }
@@ -56,10 +71,10 @@ class LoginActivity : BaseActivity() {
                 startActivity(Intent(this, HomeActivity::class.java))
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
                 Toast.makeText(applicationContext, it.message, Toast.LENGTH_SHORT).show()
-                my_progressBar.visibility = View.GONE
+                myProgressbar.visibility = View.GONE
             }else{
                 Toast.makeText(applicationContext, it.message, Toast.LENGTH_SHORT).show()
-                my_progressBar.visibility = View.GONE
+                myProgressbar.visibility = View.GONE
             }
         })
 

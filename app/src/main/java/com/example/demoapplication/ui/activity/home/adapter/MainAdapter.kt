@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.demoapplication.R
 import com.example.demoapplication.networking.responsePojo.home.PostList
 import com.example.demoapplication.utility.GlideApp
+import timber.log.Timber
 
 class MainAdapter(
     val context: Context?,
@@ -54,7 +55,8 @@ class MainAdapter(
 
     // Gets the number of animals in the list
     override fun getItemCount(): Int {
-        return list!!.size
+        Timber.e(list?.size.toString())
+        return list?.size ?: 0
     }
 
 

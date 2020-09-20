@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import androidx.appcompat.widget.AppCompatTextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.demoapplication.DemoApplication.Companion.getPref
@@ -14,7 +15,6 @@ import com.example.demoapplication.localDatabase.staticValue.StaticValue
 import com.example.demoapplication.ui.BaseActivity
 import com.example.demoapplication.ui.activity.home.HomeActivity
 import com.example.demoapplication.viewModel.splash.SplashViewModel
-import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : BaseActivity() {
 
@@ -22,12 +22,16 @@ class SplashActivity : BaseActivity() {
 
     private lateinit var splashViewModel: SplashViewModel
 
+    private lateinit var nameApp:AppCompatTextView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
 
         setAnimation()
+
+        nameApp = findViewById(R.id.nameApp)
 
         splashViewModel = ViewModelProviders.of(this).get(SplashViewModel::class.java)
 

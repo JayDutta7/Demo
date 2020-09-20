@@ -11,6 +11,7 @@ import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import okhttp3.MediaType
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody
 import timber.log.Timber
 
@@ -34,9 +35,9 @@ class HomeRepository {
         return dashboardRepoApiService?.fetchListing(
             headerMap,
             "",
-            RequestBody.create(MediaType.parse("text/plain"),action),
-            RequestBody.create(MediaType.parse("text/plain"),pageNo.toString()),
-            RequestBody.create(MediaType.parse("text/plain"),timeZone),)
+            RequestBody.create("text/plain".toMediaTypeOrNull(),action),
+            RequestBody.create("text/plain".toMediaTypeOrNull(),pageNo.toString()),
+            RequestBody.create("text/plain".toMediaTypeOrNull(),timeZone),)
             ?.doOnError {
                 Timber.e(it)
             }?.subscribeOn(Schedulers.io())
