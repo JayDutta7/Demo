@@ -15,7 +15,6 @@ import java.util.concurrent.TimeUnit
 
 object RetrofitNetworking {
     private var retrofit: Retrofit? = null
-
     fun getClient(baseUrl: String): Retrofit? {
         Timber.e(baseUrl)
         if (retrofit == null || !TextUtils.isEmpty(baseUrl)) {
@@ -32,10 +31,7 @@ object RetrofitNetworking {
         } else {
             Timber.e("Retrofit is not null || BaseUrl is null")
         }
-
-
         return retrofit
-
     }
     /*Client*/
     private fun createRequestInterceptorClient(): OkHttpClient {

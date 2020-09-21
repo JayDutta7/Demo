@@ -25,9 +25,6 @@ class LoginRepository {
         password: String,
         action: String
     ): Single<LoginRes>? {
-        Log.e("email", email)
-        Log.e("email", password)
-        Log.e("email", action)
         return loginRepoApiService?.fetchLogin(
             url = "",
             action = action.toRequestBody("text/plain".toMediaTypeOrNull()),

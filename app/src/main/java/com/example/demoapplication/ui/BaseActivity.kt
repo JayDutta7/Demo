@@ -27,7 +27,7 @@ abstract class BaseActivity : AppCompatActivity() {
     }
 
     //Setting layout dynamically
-    abstract fun setContentView():Int?
+    abstract fun setContentView(): Int?
 
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -65,11 +65,8 @@ abstract class BaseActivity : AppCompatActivity() {
     // Method to manually check connection status
     private fun checkConnection() {
         val isConnected = ConnectivityReceiver.isConnected(context = applicationContext)
-        val message = if (isConnected)
-            "Connected to Internet"
-        else
-            "No Internet Connection"
-        Toast.makeText(applicationContext, message, Toast.LENGTH_SHORT).show()
+        if (!isConnected)
+            Toast.makeText(applicationContext, "No Internet Connection", Toast.LENGTH_SHORT).show()
     }
 
 

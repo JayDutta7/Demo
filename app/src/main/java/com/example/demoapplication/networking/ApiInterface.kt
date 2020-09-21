@@ -4,7 +4,6 @@ import com.example.demoapplication.networking.responsePojo.home.MainListResponse
 import com.example.demoapplication.networking.responsePojo.login.LoginRes
 import io.reactivex.Single
 import okhttp3.RequestBody
-import retrofit2.Response
 import retrofit2.http.*
 import timber.log.Timber
 
@@ -15,7 +14,6 @@ interface ApiInterface {
     //@Field parameters can only be used with form encoding (POST)
     //@Query This annotation represents any query key value pair to be sent along with the network request GET/POST
     //@Path parameter name must match \{([a-zA-Z][a-zA-Z0-9_-]*)\}.
-
 
     /*todo------((Api1--Login))*/
     @Multipart
@@ -35,9 +33,6 @@ interface ApiInterface {
         @Part("action") action: RequestBody,
         @Part("pageNo") pageNo: RequestBody,
         @Part("timeZone") timeZone: RequestBody): Single<MainListResponse>
-
-
-
 
     /**Create Retrofit Service--By Calling class Create Retrofit**/
     class CreateRetrofit {

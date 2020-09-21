@@ -99,9 +99,9 @@ class DemoApplication : Application(), Application.ActivityLifecycleCallbacks {
 
     override fun onActivityStopped(activity: Activity) {
         Timber.e("onActivityStopped--${activity.componentName.className}")
-        //if (activity is BaseActivity) {
+        if (activity is BaseActivity) {
         isInterestingActivityVisible = false
-        //}
+        }
 
     }
 
@@ -111,9 +111,9 @@ class DemoApplication : Application(), Application.ActivityLifecycleCallbacks {
 
     override fun onActivityDestroyed(activity: Activity) {
         Timber.e("onActivityDestroyed--${activity.componentName.className}")
-        //if (activity is BaseActivity) {
+        if (activity is BaseActivity) {
         isInterestingActivityVisible = false
-        // }
+         }
     }
 
 
