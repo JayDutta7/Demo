@@ -39,15 +39,15 @@ class MainAdapter(
         if (!TextUtils.isEmpty(list?.get(position)?.postDescription))
             holder.itemTextt?.text = list?.get(position)?.postDescription
 
-//        context?.let {
-//            holder.side_image?.let { it1 ->
-//                GlideApp.with(it)
-//                    .load(list?.get(position)?.imageLists?.get(position)?.imageUrl)
-//                    .placeholder(R.mipmap.ic_launcher)
-//                    .error(R.mipmap.ic_launcher)
-//                    .into(it1)
-//            }
-//        }
+        context?.let {
+            holder.side_image?.let { it1 ->
+                GlideApp.with(it)
+                    .load(list?.get(position)?.imageLists?.get(0)?.imageUrl)
+                    .placeholder(R.mipmap.ic_launcher)
+                    .error(R.mipmap.ic_launcher)
+                    .into(it1)
+            }
+        }
 
 
     }

@@ -12,17 +12,15 @@
   <component name="ChangeListManager">
     <list default="true" id="a24ddcdc-ba60-4347-bf17-b32e38698d89" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/demoapplication/DemoApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/demoapplication/DemoApplication.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/demoapplication/networking/ApiInterface.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/demoapplication/networking/ApiInterface.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/demoapplication/networking/RetrofitNetworking.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/demoapplication/networking/RetrofitNetworking.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/demoapplication/repository/login/LoginRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/demoapplication/repository/login/LoginRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/demoapplication/ui/BaseActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/demoapplication/ui/BaseActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/demoapplication/ui/activity/home/adapter/MainAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/demoapplication/ui/activity/home/adapter/MainAdapter.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="0F9A29FD" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -212,5 +210,9 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="368" y="135" width="696" height="522" key="find.popup/67.27.1299.741@67.27.1299.741" timestamp="1600616996827" />
+    <state x="380" y="352" key="run.anything.popup" timestamp="1600662620866">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="380" y="352" key="run.anything.popup/67.27.1299.741@67.27.1299.741" timestamp="1600662620866" />
   </component>
 </project>

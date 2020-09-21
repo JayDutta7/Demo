@@ -28,10 +28,9 @@ class SplashActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        nameApp = findViewById(R.id.nameApp)
 
         setAnimation()
-
-        nameApp = findViewById(R.id.nameApp)
 
         splashViewModel = ViewModelProviders.of(this).get(SplashViewModel::class.java)
 
