@@ -8,6 +8,7 @@ import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
+import androidx.appcompat.widget.AppCompatTextView
 import androidx.lifecycle.ViewModelProviders
 import com.example.demoapplication.R
 import com.example.demoapplication.ui.BaseActivity
@@ -19,7 +20,7 @@ class LoginActivity : BaseActivity() {
     private lateinit var loginViewModel: LoginViewModel
 
     private lateinit var loginButton:AppCompatButton
-    private lateinit var skipLogin:AppCompatButton
+    private lateinit var skipLogin:AppCompatTextView
     private lateinit var userNameOrMobile:AppCompatEditText
     private lateinit var userPassword:AppCompatEditText
     private lateinit var myProgressbar:ProgressBar
