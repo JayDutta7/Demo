@@ -19,7 +19,6 @@ class HomeViewModel : ViewModel() {
     //Access to repository
     private var homeRepository: HomeRepository? = null
     private var compositeDisposable: CompositeDisposable? = null
-    //Access from view
     var mutableLiveData: MutableLiveData<ResponseResult>
 
     init {

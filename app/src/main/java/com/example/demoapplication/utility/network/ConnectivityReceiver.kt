@@ -9,10 +9,11 @@ import android.net.ConnectivityManager
 
 /**
  * This class ensure the network connection changes and notify to the respective callbacks.
- * Created by Dcc on 17/01/2020.
  */
-class ConnectivityReceiver internal constructor(private val mConnectivityReceiverListener: ConnectivityReceiverListener) : BroadcastReceiver() {
+class ConnectivityReceiver internal constructor(private val mConnectivityReceiverListener: ConnectivityReceiverListener)
+    : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
+        Timber.e("status",intent.data)
         mConnectivityReceiverListener.onNetworkConnectionChanged(
             isConnected(
                 context

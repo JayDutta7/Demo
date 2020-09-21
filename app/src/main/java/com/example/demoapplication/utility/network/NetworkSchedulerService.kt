@@ -13,7 +13,6 @@ import timber.log.Timber
 /**
  * Service to handle callbacks from the JobScheduler. Requests scheduled with the JobScheduler
  * ultimately land on this service's "onStartJob" method.
- * @author Dcc
  */
 class NetworkSchedulerService : JobService(), ConnectivityReceiverListener {
     private var mConnectivityReceiver: ConnectivityReceiver? = null

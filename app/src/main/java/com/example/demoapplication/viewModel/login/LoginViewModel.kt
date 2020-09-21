@@ -16,11 +16,9 @@ import io.reactivex.disposables.Disposable
 import timber.log.Timber
 
 class LoginViewModel:ViewModel() {
-
     //Access to repository
     private var loginRepository: LoginRepository? = null
     private var compositeDisposable: CompositeDisposable? = null
-    //Access from view
     var mutableLiveData: MutableLiveData<loginMessage>
 
     init {
@@ -35,7 +33,7 @@ class LoginViewModel:ViewModel() {
     password: String,
     action:String
     ){
-                loginRepository?.loginApi(email, password, action)
+            loginRepository?.loginApi(email, password, action)
             ?.doOnError {
                 Timber.e(it)
             }?.subscribeWith(object : SingleObserver<LoginRes> {
@@ -51,7 +49,6 @@ class LoginViewModel:ViewModel() {
                     Timber.e(response.serverRes?.responseMessage)
                     if(response.serverRes?.responseCode == 200){
                         if(response.serverResult !=null){
-
                             mutableLiveData.postValue(loginMessage(response.serverRes.responseMessage,response.serverRes.isSuccess))
                             //Save Accesstoken
                             getPref().setPrefValue(
