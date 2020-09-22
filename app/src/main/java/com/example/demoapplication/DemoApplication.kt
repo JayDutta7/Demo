@@ -67,6 +67,10 @@ class DemoApplication : Application(), Application.ActivityLifecycleCallbacks {
             //Timber.e( "LocalDatabase--SharedPref")
             return instance.sharedPreference
         }
+        /**Get application consumer key*/
+        fun getConsumerKey(): String {
+            return com.example.demoapplication.BuildConfig.CONSUMER_KEY
+        }
 
     }
 
