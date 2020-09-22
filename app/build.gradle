@@ -5,16 +5,21 @@ apply plugin: 'kotlin-kapt'
 apply plugin: "androidx.navigation.safeargs.kotlin"
 apply from: 'gradleScripts/dependencies.gradle'
 
+
+
+def versionMajor = 1
+def versionMinor = 1
+def versionPatch = 0
 android {
     compileSdkVersion 30
     buildToolsVersion "29.0.3"
     defaultConfig {
-        applicationId "com.example.chatbotdemo"
+        applicationId "com.example.demoapp"
         minSdkVersion 21
         targetSdkVersion 30
         multiDexEnabled true
-        versionCode 1
-        versionName "1.0"
+        versionCode versionMajor * 10000 + versionMinor * 100 + versionPatch
+        versionName "${versionMajor}.${versionMinor}.${versionPatch}"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

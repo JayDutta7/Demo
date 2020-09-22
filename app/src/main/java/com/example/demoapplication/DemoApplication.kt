@@ -20,7 +20,7 @@ class DemoApplication : Application(), Application.ActivityLifecycleCallbacks {
     /**
      * checking internet connection*/
     private var isInterestingActivityVisible = false
-
+    /****/
     init {
         instance = this
     }

@@ -38,6 +38,8 @@ ext {
         xRecyclerView = '1.1.0'
         materialDesign = '1.2.1'
 
+
+
         utilDepenencies = [
                 timberLog : "com.jakewharton.timber:timber:$timberLog",
                 glidE:"com.github.bumptech.glide:glide:$glidE",
