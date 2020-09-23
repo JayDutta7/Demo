@@ -1,4 +1,4 @@
-package com.example.demoapplication.repository.home
+package com.example.demoapplication.repository
 
 
 import android.annotation.SuppressLint
@@ -30,9 +30,6 @@ class HomeRepository {
         timeZone:String,
 
     ): Single<MainListResponse>? {
-        Log.e("1",action)
-        Log.e("2",pageNo.toString())
-        Log.e("3",timeZone)
         return dashboardRepoApiService?.fetchListing(
             headerMap,
             "",

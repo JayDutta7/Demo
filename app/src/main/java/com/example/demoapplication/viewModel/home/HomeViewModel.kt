@@ -6,8 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.demoapplication.networking.responsePojo.home.MainListResponse
 import com.example.demoapplication.networking.responsePojo.home.ResponseResult
-import com.example.demoapplication.networking.responsePojo.login.loginMessage
-import com.example.demoapplication.repository.home.HomeRepository
+import com.example.demoapplication.repository.HomeRepository
 import io.reactivex.SingleObserver
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
