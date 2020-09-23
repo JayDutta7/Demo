@@ -13,6 +13,7 @@ import io.reactivex.schedulers.Schedulers
 import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody
+import okhttp3.RequestBody.Companion.toRequestBody
 import timber.log.Timber
 
 
@@ -35,9 +36,9 @@ class HomeRepository {
         return dashboardRepoApiService?.fetchListing(
             headerMap,
             "",
-            RequestBody.create("text/plain".toMediaTypeOrNull(),action),
-            RequestBody.create("text/plain".toMediaTypeOrNull(),pageNo.toString()),
-            RequestBody.create("text/plain".toMediaTypeOrNull(),timeZone),)
+            action.toRequestBody("text/plain".toMediaTypeOrNull()),
+            pageNo.toString().toRequestBody("text/plain".toMediaTypeOrNull()),
+            timeZone.toRequestBody("text/plain".toMediaTypeOrNull()),)
             ?.doOnError {
                 Timber.e(it)
             }?.subscribeOn(Schedulers.io())

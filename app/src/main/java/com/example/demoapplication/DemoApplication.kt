@@ -17,9 +17,7 @@ class DemoApplication : Application(), Application.ActivityLifecycleCallbacks {
     /**
      * SharedPreference*/
     private lateinit var sharedPreference: SharedPreferenceImpl
-    /**
-     * checking internet connection*/
-    private var isInterestingActivityVisible = false
+
     /****/
     init {
         instance = this
@@ -50,10 +48,6 @@ class DemoApplication : Application(), Application.ActivityLifecycleCallbacks {
         private lateinit var instance: DemoApplication
 
 
-        fun isInterestingActivityVisible(): Boolean {
-            return instance.isInterestingActivityVisible
-        }
-
         /**
          * getting context from application class*/
         fun getApplicationContext(): Context {
@@ -67,10 +61,7 @@ class DemoApplication : Application(), Application.ActivityLifecycleCallbacks {
             //Timber.e( "LocalDatabase--SharedPref")
             return instance.sharedPreference
         }
-        /**Get application consumer key*/
-        fun getConsumerKey(): String {
-            return com.example.demoapplication.BuildConfig.CONSUMER_KEY
-        }
+
 
     }
 
@@ -92,9 +83,7 @@ class DemoApplication : Application(), Application.ActivityLifecycleCallbacks {
 
     override fun onActivityResumed(activity: Activity) {
         Timber.e("onActivityResumed--${activity.componentName.className}")
-        if (activity is BaseActivity) {
-            isInterestingActivityVisible = true
-        }
+
     }
 
     override fun onActivityPaused(activity: Activity) {
@@ -103,21 +92,13 @@ class DemoApplication : Application(), Application.ActivityLifecycleCallbacks {
 
     override fun onActivityStopped(activity: Activity) {
         Timber.e("onActivityStopped--${activity.componentName.className}")
-        if (activity is BaseActivity) {
-        isInterestingActivityVisible = false
-        }
-
     }
-
     override fun onActivitySaveInstanceState(activity: Activity, outState: Bundle) {
         Timber.e("""onActivitySaveInstanceState--${activity.componentName.className}""")
     }
 
     override fun onActivityDestroyed(activity: Activity) {
         Timber.e("onActivityDestroyed--${activity.componentName.className}")
-        if (activity is BaseActivity) {
-        isInterestingActivityVisible = false
-         }
     }
 
 

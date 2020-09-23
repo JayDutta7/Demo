@@ -13,7 +13,7 @@ import android.net.ConnectivityManager
 class ConnectivityReceiver internal constructor(private val mConnectivityReceiverListener: ConnectivityReceiverListener)
     : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
-        Timber.e("status",intent.data)
+        //Timber.e("status",intent.data)
         mConnectivityReceiverListener.onNetworkConnectionChanged(
             isConnected(
                 context

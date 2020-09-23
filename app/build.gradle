@@ -33,15 +33,12 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-        debug{
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
+
     }
 
     defaultConfig {
         // should correspond to key/value pairs inside the file
-        buildConfigField("String", "CONSUMER_KEY", apiKeyProperties['CONSUMER_KEY'])
+        buildConfigField "String", "CONSUMER_KEY", "\"" + apiKeyProperties.CONSUMER_KEY + "\""
     }
 
     buildFeatures {
@@ -49,8 +46,8 @@ android {
     }
     compileOptions {
         coreLibraryDesugaringEnabled true
-        targetCompatibility = "8"
-        sourceCompatibility = "8"
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
     // For Kotlin projects
     kotlinOptions {
@@ -63,13 +60,14 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+
     //util
     implementation utilDepenencies.timberLog
     implementation utilDepenencies.multiDex
     implementation utilDepenencies.sdpDimen
     implementation utilDepenencies.karumiDexter
-    //Material Design
-    implementation utilDepenencies.materialDesign
+
     //Kotlin specific dependencies
     implementation kotlinDependencies.kotlinStdlib
     //Core Android dependencies
@@ -86,9 +84,9 @@ dependencies {
     implementation rxDependencies.rxJava
     // UI
     implementation utilDepenencies.circleImageView
+    implementation utilDepenencies.materialDesign
     // Networking
-    implementation networkingDependencies.retrofitCore
-    //implementation networkingDependencies.retrofitMoshiConverter
+    implementation networkingDependencies.retrofitCore    //implementation networkingDependencies.retrofitMoshiConverter
     //implementation networkingDependencies.moshi
     //kapt networkingDependencies.moshiAnnotation
     implementation networkingDependencies.okhttp

@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">DemoApplication</string>
-    <string name="company_name">Demo-Application</string>
+    <string name="company_name">currweather</string>
+    <string name="powered_by">Powered by openweather</string>
+    <string name="version">Version 0.0.1</string>
+    <string name="next_15_days_label">Next 15 Days</string>
 </resources>

@@ -61,7 +61,7 @@ ext {
 
 
         kotlinDependencies = [
-                kotlinStdlib: "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion",
+                kotlinStdlib: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
                 //coroutinesCore: "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutineVersion",
                 //coroutinesAndroid: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinCoroutineVersion"
         ]

@@ -5,16 +5,16 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import android.widget.Toast
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.example.demoapplication.DemoApplication.Companion.getPref
-import com.example.demoapplication.ui.activity.login.LoginActivity
+import com.example.demoapplication.BuildConfig
 import com.example.demoapplication.R
-import com.example.demoapplication.localDatabase.staticValue.StaticValue
 import com.example.demoapplication.ui.BaseActivity
 import com.example.demoapplication.ui.activity.home.HomeActivity
 import com.example.demoapplication.viewModel.splash.SplashViewModel
+import timber.log.Timber
 
 class SplashActivity : BaseActivity() {
 
@@ -48,10 +48,11 @@ class SplashActivity : BaseActivity() {
         splashViewModel.intentLiveData.observe(this, Observer {
             when (it) {
                 is SplashViewModel.GotoNextPage.DashBoardActivity -> {
-                    if(!TextUtils.isEmpty(getPref().getStringValue(StaticValue.headerKey))) {
+                    Timber.e(BuildConfig.CONSUMER_KEY)
+                    if(!TextUtils.isEmpty(BuildConfig.CONSUMER_KEY)) {
                         goToMainActivity()
                     }else{
-                        goToLoginActivity()
+                        errorMessage()
                     }
                 }
             }
@@ -75,10 +76,8 @@ class SplashActivity : BaseActivity() {
         finish()
     }
 
-    private fun goToLoginActivity() {
-        startActivity(Intent(this, LoginActivity::class.java))
-        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-        finish()
+    private fun errorMessage() {
+        Toast.makeText(this, "Something wrong !! please uninstall and download the application again", Toast.LENGTH_SHORT).show()
     }
 
 

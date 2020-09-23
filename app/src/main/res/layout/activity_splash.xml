@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
     tools:context=".ui.activity.splash.SplashActivity">
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -11,7 +12,7 @@
         android:layout_width="@dimen/_100sdp"
         android:layout_height="@dimen/_100sdp"
         android:layout_centerInParent="true"
-        android:src="@mipmap/ic_launcher_round"
+        android:src="@mipmap/weather_icon"
         />
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_below="@+id/mainImg"
@@ -19,8 +20,29 @@
         android:text="@string/company_name"
         android:layout_margin="@dimen/_5sdp"
         android:textColor="@android:color/white"
-        android:textSize="@dimen/_15sdp"
+        android:textSize="@dimen/_20sdp"
         android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/poweredBy"
+        android:layout_above="@id/version"
+        android:textColor="@android:color/white"
+        android:text="@string/powered_by"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/version"
+        android:textColor="@android:color/white"
+        android:hint="@string/version"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
