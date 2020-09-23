@@ -48,8 +48,6 @@ class HomeViewModel : ViewModel() {
                        if(t.responseResult!=null){
                            mutableLiveData.postValue(t.responseResult)
                        }
-
-
                    }else{
                         //
                    }

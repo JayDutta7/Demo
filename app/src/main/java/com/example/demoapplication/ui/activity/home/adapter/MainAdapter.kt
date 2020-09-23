@@ -27,12 +27,8 @@ class MainAdapter(
                 false
             )
         )
-
     }
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
-
         if (!TextUtils.isEmpty(list?.get(position)?.authorInfo?.fullName))
             holder.itemText?.text = list?.get(position)?.authorInfo?.fullName
 
@@ -48,18 +44,12 @@ class MainAdapter(
                     .into(it1)
             }
         }
-
-
     }
-
-
     // Gets the number of animals in the list
     override fun getItemCount(): Int {
         Timber.e(list?.size.toString())
         return list?.size ?: 0
     }
-
-
 }
 
 class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {

@@ -4,14 +4,11 @@ import android.annotation.SuppressLint
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import io.reactivex.Completable
+import com.example.demoapplication.repository.SplashRepository
 import io.reactivex.CompletableObserver
-import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
-import io.reactivex.schedulers.Schedulers
 import timber.log.Timber
-import java.util.concurrent.TimeUnit
 
 class SplashViewModel : ViewModel() {
 
@@ -25,55 +22,46 @@ class SplashViewModel : ViewModel() {
 
     private var compositeDisposable: CompositeDisposable? = null
 
+    private var splashRepository: SplashRepository? = null
+
     init {
         compositeDisposable = CompositeDisposable()
+        splashRepository = SplashRepository()
     }
 
     @SuppressLint("CheckResult")
     fun showAnimation() {
-        Completable.complete()
-            .doOnError {
-                Timber.e(it)
-            }.subscribeOn(Schedulers.computation())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribeWith(object : CompletableObserver {
-                override fun onComplete() {
-                    animationLive.postValue(ViewAnimation.AnimationView)
-                }
-
-                override fun onSubscribe(d: Disposable) {
-                    compositeDisposable?.add(d)
-                }
-
-                override fun onError(e: Throwable) {
-                    Timber.e(e)
-                }
-
-            })
+        splashRepository?.showAnimation()?.doOnError {
+            Timber.e(it)
+        }?.subscribeWith(object : CompletableObserver {
+            override fun onComplete() {
+                animationLive.postValue(ViewAnimation.AnimationView)
+            }
+            override fun onSubscribe(d: Disposable) {
+                compositeDisposable?.add(d)
+            }
+            override fun onError(e: Throwable) {
+                Timber.e(e)
+            }
+        })
     }
 
 
     @SuppressLint("CheckResult")
     fun delayIntent() {
-        Completable.complete()
-            .delay(3, TimeUnit.SECONDS)
-            .doOnError {
+        splashRepository?.delayIntent()
+            ?.doOnError {
                 Timber.e(it)
-            }.subscribeOn(Schedulers.computation())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribeWith(object : CompletableObserver {
+            }?.subscribeWith(object : CompletableObserver {
                 override fun onComplete() {
                     pageMutableLive.postValue(GotoNextPage.DashBoardActivity)
                 }
-
                 override fun onSubscribe(d: Disposable) {
                     compositeDisposable?.add(d)
                 }
-
                 override fun onError(e: Throwable) {
                     Timber.e(e)
                 }
-
             })
     }
 
